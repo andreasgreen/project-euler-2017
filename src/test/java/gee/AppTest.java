@@ -11,6 +11,7 @@ public class AppTest {
         assertTrue(Common.isPrime(67280421310721L));
         assertFalse(Common.isPrime(105));
         assertFalse(Common.isPrime(12381));
+        assertTrue(Common.isPrime(1999993L));
     }
 
     @org.junit.Test
