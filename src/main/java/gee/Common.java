@@ -34,4 +34,17 @@ public class Common {
         return true;
 
     }
+
+    public static long getProperDivisorsSum(long n) {
+        long sum = 0;
+
+        for(long l = 1 ; l < n / 2 + 1 ; l++) {
+            if(n % l == 0) {
+                sum += l;
+            }
+        }
+
+        return sum;
+    }
+
 }
