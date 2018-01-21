@@ -1,5 +1,7 @@
 package gee;
 
+import java.util.List;
+
 /**
  * Created by andreas on 2017-10-28.
  */
@@ -45,6 +47,18 @@ public class Common {
         }
 
         return sum;
+    }
+
+    public static void getPermutations(String prefix, String s, List<String> permutations) {
+        if (s.length() == 0) {
+            permutations.add(prefix);
+        } else {
+            for (int i = 0; i < s.length(); i++) {
+                String letter = s.substring(i, i + 1);
+                String otherLetters = s.substring(0, i) + s.substring(i + 1);
+                getPermutations(prefix + letter, otherLetters, permutations);
+            }
+        }
     }
 
 }

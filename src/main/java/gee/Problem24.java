@@ -15,7 +15,7 @@ public class Problem24 {
         String s = "0123456789";
         List<String> permutations = new ArrayList<>();
 
-        Problem24.getPermutations("", s, permutations);
+        Common.getPermutations("", s, permutations);
 
         Collections.sort(permutations);
 
@@ -27,15 +27,4 @@ public class Problem24 {
 
     }
 
-    private static void getPermutations(String prefix, String letters, List<String> permutations) {
-        if (letters.length() == 0) {
-            permutations.add(prefix);
-        } else {
-            for (int i = 0; i < letters.length(); i++) {
-                String letter = letters.substring(i, i + 1);
-                String otherLetters = letters.substring(0, i) + letters.substring(i + 1);
-                getPermutations(prefix + letter, otherLetters, permutations);
-            }
-        }
-    }
 }
