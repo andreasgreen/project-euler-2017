@@ -61,4 +61,13 @@ public class Common {
         }
     }
 
+    public static long getFac(long digit) {
+        long prod = 1;
+
+        for (long l = digit; l > 0; l--) {
+            prod = prod * l;
+        }
+
+        return prod;
+    }
 }
