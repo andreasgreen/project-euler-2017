@@ -37,7 +37,7 @@ public class Problem32 {
     private static boolean isPandigital(long a, long b, long c, int n) {
         String s = Long.toString(a) + Long.toString(b) + Long.toString(c);
 
-        if(s.length() != 9) {
+        if(s.length() != n) {
             return false;
         }
 
