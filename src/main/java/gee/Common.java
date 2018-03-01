@@ -70,4 +70,57 @@ public class Common {
 
         return prod;
     }
+
+    public static boolean isPalindromic(String s) {
+
+        if(s == null || "".equals(s)) {
+            return false;
+        }
+
+        String rev = getReverseString(s);
+
+        return s.equals(rev);
+
+    }
+
+    public static String getReverseString(String s) {
+        if(s == null || "".equals(s)) {
+            return s;
+        }
+
+        String rev = "";
+
+        for(int i = s.length() - 1 ; i >= 0 ; i--) {
+            rev += s.charAt(i);
+        }
+
+        return rev;
+
+    }
+
+    public static String getBinaryString(long l) {
+        return Long.toBinaryString(l);
+    }
+
+    public static boolean isPandigital(long a, int n) {
+        String s = Long.toString(a);
+
+        if(s.length() != n) {
+            return false;
+        }
+
+        for(int i = 1 ; i <= n ; i++) {
+            if(!s.contains(Integer.toString(i))) {
+                return false;
+            } else {
+                int idx = s.indexOf(Integer.toString(i));
+                s = s.substring(0, idx) + s.substring(idx+1);
+            }
+        }
+
+        return s.length() == 0;
+
+    }
+
+
 }
