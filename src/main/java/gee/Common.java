@@ -102,14 +102,18 @@ public class Common {
         return Long.toBinaryString(l);
     }
 
-    public static boolean isPandigital(long a, int n) {
-        String s = Long.toString(a);
+    public static boolean isPandigital(long number, int end) {
+        return isPandigital(number, end, 1);
+    }
 
-        if(s.length() != n) {
+    public static boolean isPandigital(long number, int end, int start) {
+        String s = Long.toString(number);
+
+        if(s.length() != (end-start)+1) {
             return false;
         }
 
-        for(int i = 1 ; i <= n ; i++) {
+        for(int i = start ; i <= end ; i++) {
             if(!s.contains(Integer.toString(i))) {
                 return false;
             } else {
